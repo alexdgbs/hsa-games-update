@@ -36,8 +36,8 @@ export default {
   },
 
   server: {
-    port: 3000, 
-    host: 'localhost' 
+    port: process.env.PORT || 3000, // Usa la variable de entorno o el puerto 3000 por defecto
+    host: '0.0.0.0' // Escucha en todas las interfaces de red
   },
   serverMiddleware: [
     { path: '/api', handler: '~/index.js' } // Cambia la ruta para que apunte a la raíz
