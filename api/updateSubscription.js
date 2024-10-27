@@ -3,7 +3,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/update-subscription', async (req, res) => {
   const { email, isSubscribed } = req.body;
   try {
     const user = await User.findOneAndUpdate(

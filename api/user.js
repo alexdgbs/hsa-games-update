@@ -3,7 +3,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/user', async (req, res) => {
   const { email } = req.query;
   if (!email) {
     return res.status(400).json({ message: 'El correo electrónico es requerido.' });
