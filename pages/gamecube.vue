@@ -60,7 +60,7 @@ export default {
   methods: {
     async getUserInfo(email) {
       try {
-        const response = await fetch(`http://localhost:3001/api/user?email=${email}`);
+        const response = await fetch(`${process.env.BASE_API_URL}/user?email=${email}`);
         if (!response.ok) {
           throw new Error('Error en la respuesta de la API');
         }

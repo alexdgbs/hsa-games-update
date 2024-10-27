@@ -127,7 +127,7 @@ export default {
       if (emailCookie) {
         const emailValue = emailCookie.split('=')[1];
         try {
-          const response = await fetch(`http://localhost:3001/api/user?email=${emailValue}`);
+          const response = await fetch(`${process.env.BASE_API_URL}/user?email=${emailValue}`);
           if (response.ok) {
             const userData = await response.json();
             this.isSubscribed = userData.isSubscribed; 
