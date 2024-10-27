@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 3000; // Configura el puerto
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000', // Cambia esto según el origen de tu frontend
+  origin: '*', // Cambia esto según el origen de tu frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
