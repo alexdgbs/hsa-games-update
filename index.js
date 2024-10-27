@@ -2,7 +2,13 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import { connectDB } from './database.js'; // Importa la función connectDB
+import path from 'path';
+import { fileURLToPath } from 'url'; 
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+import { connectDB } from './database.js';
 
 // Importar los controladores de rutas
 import loginHandler from './api/login.js';
@@ -13,16 +19,14 @@ import subscribeHandler from './api/subscribe.js';
 import updateSubscriptionHandler from './api/updateSubscription.js';
 import upgradeAdminHandler from './api/upgradeAdmin.js';
 import userHandler from './api/user.js';
-import path from 'path';
-import { fileURLToPath } from 'url'; 
+
 
 // Configuración del entorno
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env';
 dotenv.config({ path: envFile });
 
 console.log("El archivo index.js se está ejecutando");
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
 
 const app = express(); // Crea la instancia de Express
 const PORT = process.env.PORT || 3000; // Configura el puerto

@@ -3,7 +3,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
-router.post('/upgrade-admin', async (req, res) => {
+router.post('/', async (req, res) => {
   const email = '8hsabitgames@gmail.com';
   try {
     const user = await User.findOne({ email });
