@@ -13,6 +13,8 @@ import subscribeHandler from './api/subscribe.js';
 import updateSubscriptionHandler from './api/updateSubscription.js';
 import upgradeAdminHandler from './api/upgradeAdmin.js';
 import userHandler from './api/user.js';
+import path from 'path';
+
 
 // Configuración del entorno
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env';
