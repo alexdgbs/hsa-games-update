@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/consolas", {data:[{}],fetch:{},mutations:[]});

@@ -29,7 +29,7 @@ export default {
 
   build: {},
 
-  target: 'server', 
+  target: 'static', 
 
   generate: {
     dir: 'dist'

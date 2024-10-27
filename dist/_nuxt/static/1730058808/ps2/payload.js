@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ps2", {data:[{}],fetch:{},mutations:[]});

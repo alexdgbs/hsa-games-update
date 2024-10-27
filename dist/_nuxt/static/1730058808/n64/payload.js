@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/n64", {data:[{}],fetch:{},mutations:[]});
