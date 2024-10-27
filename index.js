@@ -41,6 +41,9 @@ app.use('/api/update-subscription', updateSubscriptionHandler);
 app.use('/api/upgrade-admin', upgradeAdminHandler);
 app.use('/api/user', userHandler);
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 // Conectar a MongoDB antes de iniciar el servidor
 connectDB().then(() => {
   // Iniciar el servidor solo después de que la conexión a MongoDB haya sido exitosa
@@ -52,3 +55,4 @@ connectDB().then(() => {
 });
 
 export default app;
+
