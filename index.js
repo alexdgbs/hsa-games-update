@@ -14,13 +14,15 @@ import updateSubscriptionHandler from './api/updateSubscription.js';
 import upgradeAdminHandler from './api/upgradeAdmin.js';
 import userHandler from './api/user.js';
 import path from 'path';
-
+import { fileURLToPath } from 'url'; 
 
 // Configuración del entorno
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env';
 dotenv.config({ path: envFile });
 
 console.log("El archivo index.js se está ejecutando");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express(); // Crea la instancia de Express
 const PORT = process.env.PORT || 3000; // Configura el puerto
@@ -43,9 +45,10 @@ app.use('/api/update-subscription', updateSubscriptionHandler);
 app.use('/api/upgrade-admin', upgradeAdminHandler);
 app.use('/api/user', userHandler);
 
-app.get('*', (req, res) => {
+app.get('*', (req, res) => {  
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
+
 // Conectar a MongoDB antes de iniciar el servidor
 connectDB().then(() => {
   // Iniciar el servidor solo después de que la conexión a MongoDB haya sido exitosa
