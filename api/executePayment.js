@@ -4,7 +4,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
-router.get('/execute-payment', async (req, res) => {
+router.get('/', async (req, res) => {
   const { paymentId, PayerID, email } = req.query;
   if (!paymentId || !PayerID || !email) {
     return res.status(400).json({ message: 'Payment ID, Payer ID y email son requeridos.' });

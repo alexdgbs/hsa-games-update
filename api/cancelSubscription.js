@@ -4,7 +4,7 @@ import getAccessToken from './getAccessToken.js';
 
 const router = express.Router();
 
-router.post('/cancel-subscription', async (req, res) => {
+router.post('/', async (req, res) => {
   const { subscriptionId } = req.body;
   if (!subscriptionId) {
     return res.status(400).json({ message: 'El ID de la suscripción es requerido.' });

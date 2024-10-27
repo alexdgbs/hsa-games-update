@@ -4,7 +4,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ message: 'Por favor, proporciona un correo electrónico y una contraseña.' });

@@ -3,7 +3,7 @@ import paypal from 'paypal-rest-sdk';
 
 const router = express.Router();
 
-router.post('/create-payment', (req, res) => {
+router.post('/', (req, res) => {
   const { amount } = req.body;
   if (!amount) {
     return res.status(400).json({ message: 'El monto es requerido.' });
